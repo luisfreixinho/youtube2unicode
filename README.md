@@ -12,10 +12,10 @@ python3 script.py arg1 arg2 arg3 arg4 arg5
 * arg 4 = fps for mp4 render (frames per second you want when rendering the video)
 * arg 5 = conversion characters (circle, square, rectangle)
 
-|arg 5
-|circle    -> ◌,○,◷,◎,◔,◒,◕,◉,●
-|rectangle -> ▁,▂,▃,▄,▅,▆,▇,█,▉
-|square    -> ◽︎,▵,△,□,◫,▲,◪,▨,▩
+arg 5  
+circle    -> ◌,○,◷,◎,◔,◒,◕,◉,●  
+rectangle -> ▁,▂,▃,▄,▅,▆,▇,█,▉  
+square    -> ◽︎,▵,△,□,◫,▲,◪,▨,▩  
 
 
 # Steps
