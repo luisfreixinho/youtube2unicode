@@ -24,7 +24,7 @@ square    -> ◽︎,▵,△,□,◫,▲,◪,▨,▩
 * convert youtube video to mp4
 * convert the video to frames
 * convert the frames to grayscale frames
-* convert the grayscale frames to uniscode art in txt
+* convert the grayscale frames to unicode art in txt
 * convert the txt file to a png (disclaimer: this part was found on the internet so I didn't have to screenshot all the txt files in order to generate the final video, it was just a simple shortcut that doesn't modify the core part of the script written by me)
 * render video based on the resulting pngs
 
