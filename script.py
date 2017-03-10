@@ -54,6 +54,8 @@ conversorSquare[175:200] = u'\u25B3'
 conversorSquare[200:225] = u'\u25B5'
 conversorSquare[225:256] = u'\u25FD'
 
+conv_dict = {'circle': conversorCircle, 'rectangle': conversorRectangle, 'square': conversorSquare}
+
 MAXHEIGHT = 100
 PIXEL_ON = 0
 PIXEL_OFF = 255
@@ -190,7 +192,8 @@ def text_image(text_path, font_path=None):
     return image
 
 def export_movie(name, fps):
-    subprocess.call('ffmpeg -framerate '+int(fps)+' -i '+ name + '/imagetext/textimage%03d.png -s:v 1280x720 -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p ' + name+ '/result.mp4' , shell=True)
+    
+    subprocess.call('ffmpeg -framerate '+fps+' -i '+ name + '/imagetext/textimage%03d.png -s:v 1280x720 -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p ' + name+ '/result.mp4' , shell=True)
 
 def main(): 
     #arg 1 = youtube link
@@ -200,6 +203,8 @@ def main():
     n_frames = sys.argv[2]
     nome_file = sys.argv[3]
     fps = sys.argv[4]
+    conversor = sys.argv[5]
+    print(conv_dict[conversor])
 
     print('1/6 START downloading youtube video')
     proj_name = youtube_conv(yt, nome_file)
@@ -211,7 +216,7 @@ def main():
     frames_to_gray(proj_name)
     print('3/6 COMPLETE converting frames to grayscale')
     print('4/6 START converting frames to txt')
-    gray_frames_to_txt(conversorSquare, proj_name)
+    gray_frames_to_txt(conv_dict[conversor], proj_name)
     print('4/6 COMPLETE converting frames to txt')
     print('5/6 START converting frames to txt')
     txt_to_image(proj_name)
