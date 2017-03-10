@@ -1,7 +1,8 @@
 # Requirements
   ffmpeg
   pip install -r requirements.txt
-
+  everson mono.tff
+  
 # How to run it
 
 python3 script.py arg1 arg2 arg3 arg4 arg5
